@@ -9,7 +9,7 @@ function CheckoutButton({cart}){
     const stripePromise = loadStripe(`${process.env.stripe_public_key}`);
     async function createCheckoutSession(){
         const stripe = await stripePromise;
-        const checkoutSession = await axios.post('/api/create-checkout-session',
+        const checkoutSession = await axios.post('ajuu-store-6ge3ie8xy-ajuu-vroo.vercel.app/api/create-checkout-session',
         {
             items : JSON.parse(localStorage.getItem('products')),
             email : session?.user?.email
