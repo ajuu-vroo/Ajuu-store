@@ -6,7 +6,7 @@ import Link from 'next/link'
 function CheckoutButton({cart}){
     const[session] = useSession();
 
-    const stripePromise = loadStripe(process.env.stripe_public_key.toString());
+    const stripePromise = loadStripe(process.env.stripe_public_key);
     async function createCheckoutSession(){
         const stripe = await stripePromise;
         const checkoutSession = await axios.post('/api/create-checkout-session',
