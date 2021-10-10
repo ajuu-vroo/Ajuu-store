@@ -10,7 +10,7 @@ export default NextAuth({
 
       async authorize(credentials) {
         // Add logic here to look up the user from the credentials supplied
-        const user = await fetch(`http://localhost:3000/api/loginChecker`,{
+        const user = await fetch(`http://ajuu-store.vercel.app/api/loginChecker`,{
           method: "POST",
           body:JSON.stringify(credentials),
           headers: {
