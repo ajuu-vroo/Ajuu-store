@@ -50,7 +50,7 @@ function Navbar() {
             </Link>
 
         </div>
-        {appear && <Sidebar />}
+        {appear &&  <Sidebar /> }
     </>
 
     )

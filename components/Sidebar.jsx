@@ -4,9 +4,9 @@ import { signOut, useSession } from "next-auth/client"
 function Sidebar() {
     const [session] = useSession();
 
-    return (<div className='flex flex-col animate-dragUp absolute z-30 w-full pt-12'>
-        <div className='h-full w-full bg-[#950740] text-white flex flex-col text-center pt-2'>
-            {session ? <div className='space-y-2'><h1>You are logged in as {session.user.name}</h1>
+    return (<div className='flex flex-col animate-dragUp fixed z-30 w-full pt-12'>
+        <div className='h-full w-full bg-[#950740] text-white flex flex-col text-center pt-4'>
+            {session ? <div className='space-y-2 '><h1>You are logged in as {session.user.name}</h1>
                 <h1 onClick={() => signOut()} className='group'>You can <span className='group-active:underline'>Log Out</span> by clicking here.</h1></div> :
                 (<div><a href='/login'><h1 className=' active:underline'>Log in to your Account</h1></a>
                     <a href='/sign-up-now'><h1 className=' active:underline'>Sign Up with New Account</h1></a> </div>)
